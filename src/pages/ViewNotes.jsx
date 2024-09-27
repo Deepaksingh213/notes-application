@@ -34,8 +34,8 @@ const ViewNotes = () => {
         </div>
       ) : (
         <div className="text-center py-10">
-          <h2 className="text-2xl font-bold text-gray-800">No Data at this Moment</h2>
-          <p className="text-gray-600">Please add some notes to view them here.</p>
+          <h2 className="text-2xl font-bold text-white">No Data at this Moment</h2>
+          <p className="text-white">Please add some notes to view them here.</p>
         </div>
       )}
     </div>
