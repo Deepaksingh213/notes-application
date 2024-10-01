@@ -46,8 +46,8 @@ const Dashboard = () => {
                 <span>Note Application</span>
               </Link>
             </div>
-            <div className="flex-1">
-              <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+            <div className="flex-1 " >
+              <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
                 <NavLink
                   to="/add-notes"
                 
