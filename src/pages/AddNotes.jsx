@@ -17,10 +17,11 @@ const selectMenu = [
 ];
 
 const AddNotes = () => {
-  const noteContext = useContext(NoteContext);
-  const [notesList, setNotesList] = useState([]);
+  const {notes,setNotes} = useContext(NoteContext);
+
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
+    id:"",
     title: "",
     content: "",
     statusId: -1,
@@ -46,31 +47,27 @@ const AddNotes = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation checks (optional)
-    // if (data.title.trim() === "") {
-    //   return toast.error("Title is required");
-    // }
-    // if (data.content.trim() === "") {
-    //   return toast.error("Content is required");
-    // }
-    // if (data.statusId === -1) {
-    //   return toast.error("Status is required");
-    // }
-    // if (data.date.trim() === "") {
-    //   return toast.error("Date is required");
-    // }
+    //validation
+    if(data.title===undefined || data.title.trim() === ""){
+      return toast.error("title is required!!")
+    }
+    if(data.content===undefined || data.content.trim() === ""){
+      return toast.error("title is required!!")
+    }
+    if(data.statusId===undefined || data.statusId.trim() === ""){
+      return toast.error("title is required!!")
+    }
+    if(data.date===undefined || data.date.trim() === ""){
+      return toast.error("title is required!!")
+    }
 
-    // Add the current note to the notesList array
-    setNotesList(() => {
-      const updatedList = [...notesList, data];
-      noteContext.setCheck(updatedList); 
-      return updatedList;
-    });
+    const noteList={
+      ...data, id: Math.round(Math.random()*100000)
+    }
+    
+   setNotes([...notes, noteList]);
 
-    // Clear form data after submission
-    ClearData();
 
-    // Success notification
     toast.success("Note added successfully");
   };
 
@@ -130,7 +127,7 @@ const AddNotes = () => {
             />
           </div>
 
-          {/* Submit and Clear buttons */}
+         
           <div className="flex gap-2 mt-4 justify-center items-center">
             <Button type="submit" className="" disabled={loading}>
               <PiSpinnerBold

@@ -1,6 +1,7 @@
 import Dashboard from "@/component/Dashboard";
 import AddNotes from "@/pages/AddNotes";
 import ViewNotes from "@/pages/ViewNotes";
+import ViewSingleDetails from "@/pages/ViewSingleDetails";
 import { createBrowserRouter } from "react-router-dom";
 
 
@@ -16,6 +17,10 @@ import { createBrowserRouter } from "react-router-dom";
           {
             path: "/view-notes",
             element: <ViewNotes />
+          },
+          {
+            path: "/view-details/:notesId",
+            element: <ViewSingleDetails />
           },
       ]
     },
