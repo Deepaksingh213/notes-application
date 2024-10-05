@@ -43,13 +43,13 @@ const Dashboard = () => {
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
               <Link to="/add-notes" className="flex items-center gap-2 font-semibold text-white">
                 <PiNotebookBold className="h-6 w-6" />
-                <span>Note Application</span>
+                <span> Three Assigment Here!!</span>
               </Link>
             </div>
             <div className="flex-1 " >
               <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
                 <NavLink
-                  to="/add-notes"
+                  to="/custom-localStorge"
                 
                   className={({ isActive }) =>
                     `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:bg-gray-700 hover:text-white ${
@@ -58,14 +58,21 @@ const Dashboard = () => {
                   }
                 >
                   <SlNotebook className="h-4 w-4" />
-                  Add Notes
+                Local Storge
                 </NavLink>
                 <NavLink
-                  to="/view-notes"
+                  to="/custom-windowResize"
                   className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
                 >
                   <VscNotebook className="h-4 w-4" />
-                  View Notes
+                Window Resize
+                </NavLink>
+                <NavLink
+                  to="/custom-memsGenerator"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
+                >
+                  <VscNotebook className="h-4 w-4" />
+               Random Mems Generator
                 </NavLink>
               </nav>
             </div>
@@ -86,24 +93,36 @@ const Dashboard = () => {
               </SheetTrigger>
               <SheetContent side="left" className="flex flex-col bg-gray-800 text-white">
                 <nav className="grid gap-2 text-lg font-medium">
-                  <NavLink
-                    to="/add-notes"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
-                  >
-                    <SlNotebook className="h-4 w-4" />
-                    Add Notes
-                  </NavLink>
-                  <NavLink
-                    to="/view-notes"
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
-                  >
-                    <VscNotebook className="h-4 w-4" />
-                    View Notes
-                  </NavLink>
+                <NavLink
+                  to="/custom-localStorge"
+                
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:bg-gray-700 hover:text-white ${
+                      isActive ? 'bg-gray-700 text-white' : 'text-gray-300'
+                    }`
+                  }
+                >
+                  <SlNotebook className="h-4 w-4" />
+                Local Storge
+                </NavLink>
+                <NavLink
+                  to="/custom-windowResize"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
+                >
+                  <VscNotebook className="h-4 w-4" />
+                Window Resize
+                </NavLink>
+                <NavLink
+                  to="/custom-memsGenerator"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
+                >
+                  <VscNotebook className="h-4 w-4" />
+               Random Mems Generator
+                </NavLink>
                 </nav>
               </SheetContent>
             </Sheet>
-            <div className="w-full flex-1">
+            {/* <div className="w-full flex-1">
               <form>
                 <div className="relative">
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -114,7 +133,7 @@ const Dashboard = () => {
                   />
                 </div>
               </form>
-            </div>
+            </div> */}
           </header>
           <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
             <Outlet />

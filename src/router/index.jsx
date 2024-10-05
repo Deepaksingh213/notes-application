@@ -1,7 +1,8 @@
 import Dashboard from "@/component/Dashboard";
-import AddNotes from "@/pages/AddNotes";
-import ViewNotes from "@/pages/ViewNotes";
-import ViewSingleDetails from "@/pages/ViewSingleDetails";
+import LocalStorgeHook from "@/pages/LocalStorgeHook";
+import RandomMemsGenerators from "@/pages/RandomMemsGenerators";
+import WindowResizeHooks from "@/pages/WindowResizeHooks";
+
 import { createBrowserRouter } from "react-router-dom";
 
 
@@ -11,16 +12,16 @@ import { createBrowserRouter } from "react-router-dom";
       element: <Dashboard />,
       children:[
         {
-            path: "/add-notes",
-            element: <AddNotes />
+            path: "/custom-localStorge",
+            element: <LocalStorgeHook />
           },
           {
-            path: "/view-notes",
-            element: <ViewNotes />
+            path: "/custom-windowResize",
+            element: <WindowResizeHooks />
           },
           {
-            path: "/view-details/:notesId",
-            element: <ViewSingleDetails />
+            path: "/custom-memsGenerator",
+            element: <RandomMemsGenerators />
           },
       ]
     },
