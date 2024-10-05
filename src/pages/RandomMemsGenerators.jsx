@@ -41,7 +41,7 @@ const RandomMemsGenerators = () => {
             onClick={showNextMeme}
             className="px-4 py-2 bg-blue-600 text-white rounded mt-6"
           >
-            Next Meme
+            Next Memes
           </button>
         </div>
       </div>
